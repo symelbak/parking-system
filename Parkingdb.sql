@@ -1,4 +1,3 @@
--- Active: 1706167607503@@127.0.0.1@3306@parkingsystem
 CREATE TABLE Admin(
     admin_id INT PRIMARY KEY,
     password VARCHAR(15)
