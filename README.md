@@ -2,8 +2,8 @@
 An advanced parking system for MIT Bengaluru using MySQL, Node.js and Tailwind CSS
 
 Starting Digit of Registration number:
-1. Staff - 9
-2. Student - 1
+1. Staff - 9xxx
+2. Student - 1xxx
 3. Guest - 0
 
 ![alt text](app/images/index.png)
