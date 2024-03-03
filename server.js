@@ -6,12 +6,12 @@ var mysql = require('mysql');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, 'app','index')));
+app.use(express.static(path.join(__dirname, 'app')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var con = mysql.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
   password: "",
   database: ""
@@ -37,14 +37,18 @@ app.post('/submit', (req, res) => {
             console.log(user_pwd);
             if(user_pwd === password){
                 //on successful login, it should open another .js file corresponding to the token.html
-                //replace the below line with appropraite code
-                res.send('Login successful!');
+                console.log('Login successful');
+                token(res);
             }else {
                 res.status(401).send('Invalid username or password');
             }
         });
     });
 });
+
+function token(res){
+    res.redirect('token.html');
+}
 
 // Start the server
 app.listen(PORT, () => {
