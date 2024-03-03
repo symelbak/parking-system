@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "suhaas",
-  database: "parkingsystem"
+  password: "",
+  database: ""
 });
 
 app.post('/submit', (req, res) => {
