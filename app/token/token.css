@@ -1,187 +1,248 @@
 :host { 
-    display: contents; 
-  }
-  .token-container {
-    width: 100%;
-    display: flex;
-    overflow: auto;
-    min-height: 100vh;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #e39610;
-  }
+  display: contents; 
+}
+.token-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #e39610;
+}
+.token-container1 {
+  top: 0px;
+  right: 1px;
+  width: 1248px;
+  height: 1009px;
+  display: flex;
+  position: absolute;
+  align-self: flex-end;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 0px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #D9D9D9;
+}
+.token-textinput {
+  top: 207px;
+  right: 47px;
+  width: 420px;
+  height: 76px;
+  position: absolute;
+  font-size: 35px;
+}
+.token-textinput1 {
+  top: 328px;
+  right: 45px;
+  width: 420px;
+  height: 76px;
+  position: absolute;
+  font-size: 35px;
+}
+.token-text {
+  top: 208px;
+  left: 473px;
+  position: absolute;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(227, 150, 16);
+}
+.token-text01 {
+  left: 502px;
+  bottom: 59px;
+  position: absolute;
+  font-size: 35px;
+}
+.token-button {
+  top: 440px;
+  right: 49px;
+  width: var(--dl-size-size-large);
+  height: var(--dl-size-size-small);
+  position: absolute;
+  font-size: 23px;
+}
+.token-container2 {
+  top: 701px;
+  right: 39px;
+  width: 406px;
+  height: 88px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  border-color: #363636;
+  border-style: solid;
+  border-width: 2px;
+  background-color: #ffffff;
+}
+.token-container3 {
+  top: 548px;
+  right: 45px;
+  width: 406px;
+  height: 88px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  border-color: #363636;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: var(--dl-radius-radius-radius4);
+  background-color: #ffffff;
+}
+.token-button1 {
+  left: 808px;
+  width: var(--dl-size-size-large);
+  bottom: 94px;
+  height: var(--dl-size-size-small);
+  position: absolute;
+  font-size: 25px;
+}
+.token-text05 {
+  top: 335px;
+  left: 475px;
+  position: absolute;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(227, 150, 16);
+}
+.token-text06 {
+  top: 335px;
+  left: 475px;
+  position: absolute;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(227, 150, 16);
+}
+.token-text07 {
+  top: 335px;
+  left: 475px;
+  position: absolute;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(227, 150, 16);
+}
+.token-text08 {
+  left: 0px;
+  bottom: 0px;
+  position: absolute;
+  font-size: 25px;
+  padding-top: 10px;
+  border-color: var(--dl-color-gray-black);
+  border-width: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(255, 250, 250);
+}
+.token-text12 {
+  top: 446px;
+  left: 61px;
+  position: absolute;
+  font-size: 30px;
+}
+.token-button2 {
+  top: 497px;
+  left: 58px;
+  width: var(--dl-size-size-xxlarge);
+  height: var(--dl-size-size-small);
+  position: absolute;
+  font-size: 25px;
+}
+.token-image {
+  top: 13px;
+  left: 7px;
+  width: 346px;
+  height: 270px;
+  position: absolute;
+  object-fit: cover;
+}
+@media(max-width: 1600px) {
   .token-container1 {
-    left: 0px;
-    width: 504px;
-    bottom: 0px;
-    height: 1001px;
-    margin: auto;
-    display: flex;
-    position: absolute;
-    align-items: flex-end;
-    border-color: var(--dl-color-gray-black);
-    border-width: 0px;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .token-text {
-    left: 0px;
-    bottom: 0px;
-    position: absolute;
-    font-size: 25px;
-    padding-top: 10px;
-    border-color: var(--dl-color-gray-black);
-    border-width: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    background-color: rgb(255, 250, 250);
-  }
-  .token-image {
-    top: 4px;
-    left: 3px;
-    width: 499px;
-    height: 471px;
-    position: absolute;
-    object-fit: cover;
-  }
-  .token-text04 {
-    top: 556px;
-    left: 30px;
-    position: absolute;
-    font-size: 30px;
-  }
-  .token-button {
-    top: 608px;
-    left: 34px;
-    width: var(--dl-size-size-xxlarge);
-    height: var(--dl-size-size-small);
-    position: absolute;
-    font-size: 25px;
-  }
-  .token-container2 {
-    top: 0px;
-    right: 1px;
-    width: 1248px;
-    height: 1009px;
-    display: flex;
-    position: absolute;
-    align-self: flex-end;
-    align-items: center;
-    border-color: var(--dl-color-gray-black);
-    border-width: 0px;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-color: #D9D9D9;
+    width: 1471px;
+    height: 757px;
   }
   .token-textinput {
-    top: 224px;
-    left: 511px;
-    width: 420px;
-    height: 76px;
-    position: absolute;
-    font-size: 35px;
+    top: 59px;
+    right: 72px;
   }
   .token-textinput1 {
-    top: 351px;
-    left: 513px;
-    width: 420px;
-    height: 76px;
-    position: absolute;
-    font-size: 35px;
+    top: 171px;
+    right: 70px;
+  }
+  .token-text {
+    top: 60px;
+    left: 656px;
+  }
+  .token-text01 {
+    left: 669px;
+    bottom: 12px;
+  }
+  .token-button {
+    top: 287px;
+    right: 70px;
+  }
+  .token-container2 {
+    top: 491px;
+    right: 67px;
+  }
+  .token-container3 {
+    top: 371px;
+    right: 70px;
+  }
+  .token-button1 {
+    left: 998px;
+    bottom: 45px;
+    font-size: 25px;
   }
   .token-text05 {
-    top: 223px;
-    left: 151px;
-    position: absolute;
+    top: 167px;
+    left: 644px;
     font-size: 30px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
     background-color: rgb(227, 150, 16);
   }
   .token-text06 {
-    top: 350px;
-    left: 140px;
-    position: absolute;
+    top: 371px;
+    left: 774px;
     font-size: 30px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
     background-color: rgb(227, 150, 16);
   }
   .token-text07 {
-    left: 50px;
-    bottom: 5px;
-    position: absolute;
-    font-size: 35px;
-  }
-  .token-button1 {
-    top: 447px;
-    left: 789px;
-    width: var(--dl-size-size-large);
-    height: var(--dl-size-size-small);
-    position: absolute;
-    font-size: 23px;
-  }
-  .token-text11 {
-    top: 582px;
-    left: 269px;
-    position: absolute;
+    top: 490px;
+    left: 802px;
     font-size: 30px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
     background-color: rgb(227, 150, 16);
   }
   .token-text12 {
-    top: 719px;
-    left: 298px;
-    position: absolute;
-    font-size: 30px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    background-color: rgb(227, 150, 16);
-  }
-  .token-container3 {
-    top: 712px;
-    left: 519px;
-    width: 406px;
-    height: 88px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    border-color: #363636;
-    border-style: solid;
-    border-width: 2px;
-    background-color: #ffffff;
-  }
-  .token-container4 {
-    top: 560px;
-    left: 519px;
-    width: 406px;
-    height: 88px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    border-color: #363636;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: var(--dl-radius-radius-radius4);
-    background-color: #ffffff;
+    top: 411px;
+    left: 35px;
   }
   .token-button2 {
-    left: 313px;
-    width: var(--dl-size-size-large);
-    bottom: 40px;
-    height: var(--dl-size-size-small);
-    position: absolute;
-    font-size: 25px;
+    top: 459px;
+    left: 23px;
   }
-  
+  .token-image {
+    top: 5px;
+    left: -4px;
+    width: 341px;
+    height: 318px;
+  }
+}
+@media(max-width: 1200px) {
+  .token-container1 {
+    height: 722px;
+  }
+}
