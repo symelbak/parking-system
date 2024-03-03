@@ -23,20 +23,26 @@
             <br />
           </span>
           <span class="index-text5">Admin Login</span>
-          <input
-            type="text"
-            required="true"
-            placeholder="User ID"
-            class="input index-textinput"
-          />
-          <input
-            type="text"
-            required="true"
-            placeholder="Password"
-            class="input index-textinput1"
-          />
-          <button type="button" class="button index-button">Enter</button>
+          <form id="loginForm" action="/submit" method="POST">
+              <input
+                type="text"
+                name="username"
+                required="true"
+                placeholder="User ID"
+                class="input index-textinput"
+                id="username" 
+              />
+              <input
+                type="password"
+                name="password"
+                required="true"
+                placeholder="Password"
+                class="input index-textinput1"
+                id="password" 
+              />
+              <button type="submit" class="button index-button">Enter</button>
+          </form>
         </div>
-      </div>      
+      </div> 
 </body>
 </html>
