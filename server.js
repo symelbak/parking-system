@@ -4,23 +4,23 @@ const path = require('path');
 var mysql = require('mysql');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;//server is hosted on port 3000
 
 app.use(express.static(path.join(__dirname, 'app')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var con = mysql.createConnection({
+var con = mysql.createConnection({//establishes a connection to the database
   host: "localhost",
   user: "root",
-  password: "suhaas",
-  database: "parkingsystem"
+  password: "",
+  database: ""
 });
 
 //for admin login
 app.post('/submit', (req, res) => {
     try{
-        const { username, password } = req.body;
+        const { username, password } = req.body;//retrieves admin_id and password input
         con.connect((err) => {
             console.log([username],[password]);
             if (err) {
@@ -30,7 +30,7 @@ app.post('/submit', (req, res) => {
             console.log('Connected to MySQL database');
             
             con.query('SELECT password FROM admin WHERE admin_id = ?', [username], (err, rows) => {
-                if (err) {
+                if (err) {//to authenticate the admin credentials
                     console.error('Error executing query:', err);
                     return;
                 }
@@ -42,7 +42,7 @@ app.post('/submit', (req, res) => {
                     //opens token.html on successfull login
                     console.log('Login successful');
                     token(res);
-                }else {
+                }else {//username or password does not match
                     res.status(401).send('Invalid username or password');
                 }
             });
@@ -57,18 +57,18 @@ function token(res){
     res.redirect('token.html');
     //to generate a token
     app.post('/token', async(req, res) => {
-        const { reg_id, vehicle_no } = req.body;
+        const { reg_id, vehicle_no } = req.body;//retrieves reg_id and vehicle_no to generate a token
         try{
             console.log([reg_id],[vehicle_no]);
-            const rows1 = await get_reg_row(reg_id, vehicle_no);
+            const rows1 = await get_reg_row(reg_id, vehicle_no);//row from registration tables returned
             const l1 = rows1.length;
-            const rows2 = await get_empty_slots();
+            const rows2 = await get_empty_slots();//null rows from token table returned
             const l2 = rows2.length;
-            const t_no = rows2[0].token_id;
-            const s_no = rows2[0].parking_slot;
-            const r_no = rows1[0].reg_id;
-            const v_no = rows1[0].vehicle_no;
-            const t_check = await get_token_row(r_no,v_no);
+            const t_no = rows2[0].token_id;//token_id from token table
+            const s_no = rows2[0].parking_slot;//parking_slot from token table
+            const r_no = rows1[0].reg_id;//reg_id from registration table
+            const v_no = rows1[0].vehicle_no;//vehicle number from registration table
+            const t_check = await get_token_row(r_no,v_no);//row from token table returned
             const l3 = t_check.length;
             console.log('query executed');
             console.log([l1],[l2],[t_no],[s_no]);
@@ -78,7 +78,7 @@ function token(res){
             //l3(checks if the vehicle is trying to generate abother token for itself)
             if(l1 === 1 && l2 >= 1 && l3 === 0){
                 con.query('UPDATE token SET reg_id = ?,vehicle_no = ?,entry_time = curtime() WHERE token_id = ?',
-                [reg_id,vehicle_no,t_no], (err, rows2) => {
+                [reg_id,vehicle_no,t_no], (err, rows2) => {//assigns a parking slot to the user
                     if (err) {
                         console.error('Error executing query:', err);
                         return;
@@ -102,22 +102,22 @@ function token(res){
     //to make the parking spot available on exit
     app.post('/exit', async(req, res) => {
         try{
-            const {exit_id, exit_veh} = req.body;
+            const {exit_id, exit_veh} = req.body;//retrieves reg_id and vehicle_no to free the parking lot
             console.log([exit_id],[exit_veh]);
-            const rows3 = await get_token_row(exit_id, exit_veh);
+            const rows3 = await get_token_row(exit_id, exit_veh);//row from token table returned
             const l3 = rows3.length;
             const exit_t = rows3[0].token_id;
             console.log([rows3]);
-            //checks if vehicle has a token
+            //l3(checks if vehicle has a token)
             if(l3===1){
                 con.query('UPDATE token SET reg_id = NULL,vehicle_no = NULL,entry_time = NULL WHERE token_id = ?',[exit_t], (err, rows3) => {
-                    if (err) {
+                    if (err) {//makes the slot empty by setting the the following attributes to null
                         console.error('Error executing query:', err);
                         return;
                     }
                     console.log("exit successful");
                 });
-                const g_row = await guest_check(exit_id, exit_veh);
+                const g_row = await guest_check(exit_id, exit_veh);//entry_type of user returned
                 console.log([g_row]);
                 if(g_row[0].entry_type === 'Guest'){//if the user is a guest, delete row from registration table
                     con.query('DELETE FROM registration WHERE reg_id = ? AND vehicle_no = ?',[exit_id,exit_veh], (err, rows4) => {
