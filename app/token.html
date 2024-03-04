@@ -9,25 +9,29 @@
 <body>
   <div class="token-container">
     <div class="token-container1">
+      <form id="tokenForm" action="/token" method="POST">
       <input
         type="text"
-        required="true"
-        placeholder="ID1"
-        class="token-textinput input"
-      />
-      <input
-        type="text"
+        name="reg_id"
         required="true"
         placeholder="ID"
         class="token-textinput1 input"
       />
+      <input
+        type="text"
+        name="vehicle_no"
+        required="true"
+        placeholder="Number"
+        class="token-textinput3 input"
+      />
+      <button type="submit" class="token-button button">Generate</button>
+      </form>
       <span class="token-text">Registration ID</span>
       <span class="token-text01">
         <span>Register here:</span>
         <br />
         <br />
       </span>
-      <button type="button" class="token-button button">Generate</button>
       <span class="token-container2"></span>
       <span class="token-container3"></span>
       <button type="button" class="token-button2 button">Register</button>
@@ -48,19 +52,21 @@
         class="token-image"
       />
       <span class="token-text14">Registration1 ID</span>
+      <form id="exitForm" action="/exit" method="POST">
+      <input
+        type="text"
+        required="true"
+        placeholder="ID1"
+        class="token-textinput input"
+      />
       <input
         type="text"
         required="true"
         placeholder="Number1"
         class="token-textinput2 input"
       />
-      <input
-        type="text"
-        required="true"
-        placeholder="Number"
-        class="token-textinput3 input"
-      />
-      <button type="button" class="token-button1 button">Exit</button>
+      <button type="submit" class="token-button1 button">Exit</button>
+    </form>
     </div>
   </div>      
 </body>
