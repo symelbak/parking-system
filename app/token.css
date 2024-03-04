@@ -14,7 +14,7 @@
 .token-container1 {
   top: 0px;
   right: 1px;
-  width: 1248px;
+  width: 1623px;
   height: 1009px;
   display: flex;
   position: absolute;
@@ -23,7 +23,7 @@
   border-color: var(--dl-color-gray-black);
   border-width: 0px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #D9D9D9;
 }
 .token-textinput {
@@ -35,8 +35,8 @@
   font-size: 35px;
 }
 .token-textinput1 {
-  top: 328px;
-  right: 45px;
+  top: 207px;
+  right: 47px;
   width: 420px;
   height: 76px;
   position: absolute;
@@ -60,6 +60,14 @@
   font-size: 35px;
 }
 .token-button {
+  top: 440px;
+  right: 49px;
+  width: var(--dl-size-size-large);
+  height: var(--dl-size-size-small);
+  position: absolute;
+  font-size: 23px;
+}
+.token-button1 {
   top: 440px;
   right: 49px;
   width: var(--dl-size-size-large);
@@ -94,7 +102,7 @@
   border-radius: var(--dl-radius-radius-radius4);
   background-color: #ffffff;
 }
-.token-button1 {
+.token-button2 {
   left: 808px;
   width: var(--dl-size-size-large);
   bottom: 94px;
@@ -136,6 +144,17 @@
   background-color: rgb(227, 150, 16);
 }
 .token-text08 {
+  top: 335px;
+  left: 475px;
+  position: absolute;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(227, 150, 16);
+}
+.token-text09 {
   left: 0px;
   bottom: 0px;
   position: absolute;
@@ -148,13 +167,13 @@
   padding-bottom: 10px;
   background-color: rgb(255, 250, 250);
 }
-.token-text12 {
+.token-text13 {
   top: 446px;
   left: 61px;
   position: absolute;
   font-size: 30px;
 }
-.token-button2 {
+.token-button3 {
   top: 497px;
   left: 58px;
   width: var(--dl-size-size-xxlarge);
@@ -170,30 +189,70 @@
   position: absolute;
   object-fit: cover;
 }
+.token-text14 {
+  top: 208px;
+  left: 473px;
+  position: absolute;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(227, 150, 16);
+}
+.token-textinput2 {
+  top: 328px;
+  right: 45px;
+  width: 420px;
+  height: 76px;
+  position: absolute;
+  font-size: 35px;
+}
+.token-textinput3 {
+  top: 328px;
+  right: 45px;
+  width: 420px;
+  height: 76px;
+  position: absolute;
+  font-size: 35px;
+}
 @media(max-width: 1600px) {
   .token-container1 {
     width: 1471px;
     height: 757px;
   }
   .token-textinput {
-    top: 59px;
-    right: 72px;
+    top: 57px;
+    right: 50px;
+    width: var(--dl-size-size-large);
+    height: var(--dl-size-size-small);
+    font-size: 20px;
   }
   .token-textinput1 {
-    top: 171px;
-    right: 70px;
+    top: 55px;
+    right: 554px;
+    width: var(--dl-size-size-large);
+    height: var(--dl-size-size-small);
+    font-size: 20px;
   }
   .token-text {
-    top: 60px;
-    left: 656px;
+    top: 56px;
+    left: 477px;
+    padding: 5px;
+    font-size: 25px;
   }
   .token-text01 {
     left: 669px;
     bottom: 12px;
   }
   .token-button {
-    top: 287px;
-    right: 70px;
+    top: 225px;
+    right: 551px;
+  }
+  .token-button1 {
+    top: 227px;
+    right: 62px;
+    font-size: 23px;
   }
   .token-container2 {
     top: 491px;
@@ -203,34 +262,42 @@
     top: 371px;
     right: 70px;
   }
-  .token-button1 {
+  .token-button2 {
     left: 998px;
     bottom: 45px;
     font-size: 25px;
   }
   .token-text05 {
-    top: 167px;
-    left: 644px;
-    font-size: 30px;
+    top: 151px;
+    left: 477px;
+    padding: 5px;
+    font-size: 25px;
     background-color: rgb(227, 150, 16);
   }
   .token-text06 {
+    top: 151px;
+    left: 970px;
+    padding: 5px;
+    font-size: 25px;
+    background-color: rgb(227, 150, 16);
+  }
+  .token-text07 {
     top: 371px;
     left: 774px;
     font-size: 30px;
     background-color: rgb(227, 150, 16);
   }
-  .token-text07 {
+  .token-text08 {
     top: 490px;
     left: 802px;
     font-size: 30px;
     background-color: rgb(227, 150, 16);
   }
-  .token-text12 {
+  .token-text13 {
     top: 411px;
     left: 35px;
   }
-  .token-button2 {
+  .token-button3 {
     top: 459px;
     left: 23px;
   }
@@ -240,9 +307,45 @@
     width: 341px;
     height: 318px;
   }
+  .token-text14 {
+    top: 56px;
+    left: 970px;
+    padding: 5px;
+    font-size: 25px;
+  }
+  .token-textinput2 {
+    top: 152px;
+    right: 52px;
+    width: var(--dl-size-size-large);
+    height: var(--dl-size-size-small);
+    font-size: 20px;
+  }
+  .token-textinput3 {
+    top: 152px;
+    right: 556px;
+    width: var(--dl-size-size-large);
+    height: var(--dl-size-size-small);
+    font-size: 20px;
+  }
 }
 @media(max-width: 1200px) {
   .token-container1 {
     height: 722px;
+  }
+  .token-textinput {
+    top: 53px;
+    right: 50px;
+  }
+  .token-text06 {
+    top: 150px;
+    left: 982px;
+    font-size: 25px;
+    background-color: rgb(227, 150, 16);
+  }
+  .token-text14 {
+    top: 57px;
+    left: 979px;
+    font-size: 25px;
+    background-color: rgb(227, 150, 16);
   }
 }
