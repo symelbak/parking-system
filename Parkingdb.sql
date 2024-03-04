@@ -16,7 +16,7 @@ CREATE TABLE Registration(
 );
 
 CREATE TABLE Token(
-    token INT PRIMARY KEY,
+    token_id INT PRIMARY KEY,
     parking_slot VARCHAR(5) NOT NULL,
     reg_id int,
     vehicle_no VARCHAR(15),
