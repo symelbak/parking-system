@@ -1,20 +1,42 @@
 # DBMS-ParkingSystem
-An advanced parking system for MIT Bengaluru using MySQL, Node.js and CSS
 
+## ABSTRACT
+
+Efficient and user-friendly parking systems are essential for maintaining a smooth and positive experience within any institution. Unfortunately, the current system at Manipal Institute of Technology (MIT) Bengaluru suffers from inefficiencies and user inconvenience, causing frustration and delays. To address these issues and enhance the overall experience for both students and staff, this project proposes the development of a novel parking management system.
+
+## Table of Contents
++ [Abstract](#abstract)
++ [Table of Contents](#table-of-contents)
++ [Introduction](#introduction)
++ [Design and Implementation](#design-and-implementation)
++ [Result and Analysis](#result-and-analysis)
++ [Conclusion](#conclusion)
+
+## Introduction
+
+The existing parking system at Manipal Institute of Technology (MIT) Bengaluru is plagued by inefficiency and user inconvenience. This project seeks to address these shortcomings by proposing a novel parking management system built upon a robust technological foundation.
+
+The proposed system leverages a backend architecture combining MySQL for database management, Java for core functionality, and Spring Boot for a streamlined development experience. The user interface will be built using HTML, CSS, and JavaScript, ensuring a user-friendly and accessible experience.
+
+This project aims to significantly improve the efficiency and convenience of the MIT Bengaluru parking system, providing a positive impact on both students and staff.
+
+## Design and Implementation
+### System Design
+#### User Interface (UI) Design:
 ![alt text](app/images/index.png)
 ![alt text](app/images/token.png)
 ![alt text](app/images/reg.png)
+#### Database Design:
+ER Model
+![alt text](app/images/ER_model.png)
+* Admin Table(<u>admin_id</u> , password)
+* Registration Table(<u>reg_id</u> , first_name , last_name , email , phone_no , entry_type , <u>vehicle_no</u>)
+* Token Table(<u>token_id</u> , parking_slot , ***reg_id*** , ***vehicle_no*** , entry_time)
+### System Implementation
+#### Implementation Details
 
-Starting Digit of Registration number:
-1. Staff - 9xxx
-2. Student - 1xxx
-3. Guest - 0
+## Result and Analysis
 
-The token and slot fields in token.html are containers and NOT text fields.\
-Make appropriate changes to display the text.
+## Conclusion
 
 
-index.js opens index.html and connects to the db.\
-It takes in the user id and pwd and cross-checks with db.\
-Once successful, it displays "login successful".\
-Replcae it with appropriate code to open the token.html.
