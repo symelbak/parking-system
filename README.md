@@ -29,9 +29,9 @@ This project aims to significantly improve the efficiency and convenience of the
 #### Database Design:
 ER Model
 ![alt text](app/images/ER_model.png)
-* Admin Table(<u>admin_id</u> , password)
-* Registration Table(<u>reg_id</u> , first_name , last_name , email , phone_no , entry_type , <u>vehicle_no</u>)
-* Token Table(<u>token_id</u> , parking_slot , ***reg_id*** , ***vehicle_no*** , entry_time)
+* Admin Table(**admin_id** , password)
+* Registration Table(**reg_id** , first_name , last_name , email , phone_no , entry_type , **vehicle_no**)
+* Token Table(**token_id** , parking_slot , ***reg_id*** , ***vehicle_no*** , entry_time)
 ### System Implementation
 #### Implementation Details
 
