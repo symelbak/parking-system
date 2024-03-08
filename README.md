@@ -33,7 +33,33 @@ ER Model
 * Registration Table(**reg_id** , first_name , last_name , email , phone_no , entry_type , **vehicle_no**)
 * Token Table(**token_id** , parking_slot , ***reg_id*** , ***vehicle_no*** , entry_time)
 ### System Implementation
-#### Implementation Details
+
+#### Backend Architecture:
+Leveraging Java for backend logic.
+Employing the Spring framework for modular and scalable development.
+Admin login functionality for secure user authentication.
+
+#### Data Management:
+Integration of MySQL for efficient storage and retrieval of parking-related data.
+
+##### Admin Table:
++ Manages administrator credentials for system access.
+
+##### Registration Table:
++ Stores user registration details, including students, faculty, and guests.
+
+##### Token Table:
++ Records parking tokens and related information, linking to user registrations.
+
+#### Token Generation Logic:
+Designing a systematic approach to generate parking tokens during user registration.
+Implementing algorithms for dynamic parking space allocation based on availability.
+
+#### Exit Process Mechanism:
+Validating user tokens during the parking exit process.
+Executing procedures to release parking spaces and update the database.
+Handling optional deletion of guest user entries.
+
 
 ## Result and Analysis
 
