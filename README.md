@@ -24,7 +24,7 @@ This project aims to significantly improve the efficiency and convenience of the
 ### System Design
 #### User Interface (UI) Design:
 ![alt text](views/images/index.png)
-![alt text](views/images/token.png)
+![alt text](views/images/token1.png)
 ![alt text](views/images/reg.png)
 #### Database Design:
 ER Model
