@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Issue</title>
+    <style>
+        body {
+            background-color: #e39610;
+        }
+        li {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Token Generated!</h1>
+    <ul>
+        <% data.forEach(item => { %>
+            <li><%= item.label %>: <%= item.value %></li> 
+        <% }); %>
+    </ul>
+    <form id="go_back" action="/back" method="POST">
+    <button type="submit" class="token-button3 button">Token Page</button>
+    </form>
+</body>
+</html>

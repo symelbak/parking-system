@@ -16,25 +16,27 @@
         <br />
       </span>
       <span class="reg-text05">First Name</span>
-      <input type="text" required="true" class="input reg-textinput" />
-      <input type="text" required="true" class="input reg-textinput1" />
-      <input type="text" required="true" class="input reg-textinput2" />
-      <input type="text" required="true" class="input reg-textinput3" />
-      <input type="text" required="true" class="input reg-textinput4" />
-      <input type="text" required="true" class="input reg-textinput5" />
+      <form id="reg_form" action="/regform" method="POST">
+      <input type="text" name="f_name"  required="true" class="input reg-textinput" />
+      <input type="text" name="email" required="true" class="input reg-textinput1" />
+      <input type="text" name="reg_no" required="true" class="input reg-textinput2" />
+      <input type="text" name="veh_no" required="true" class="input reg-textinput3" />
+      <input type="text" name="phone" required="true" class="input reg-textinput4" />
+      <input type="text" name="l_name" required="true" class="input reg-textinput5" />
       <span class="reg-text06">Last Name</span>
       <span class="reg-text07">Phone No</span>
       <span class="reg-text08">Reg No</span>
       <span class="reg-text09">Vehicle No</span>
       <span class="reg-text10">
         <span>
-          Enter &quot;Reg No&quot;  as 0 if the
+          Enter &quot;Reg No&quot; as 0 if the
           <span [innerHTML]="rawzav6"></span>
         </span>
         <br />
         <span>token is allotted to a Guest</span>
       </span>
-      <button type="button" class="button reg-button">Register</button>
+      <button type="submit" class="button reg-button">Register</button>
+    </form>
     </div>
   </div>  
 </body>

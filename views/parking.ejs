@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data from Database Table</title>
+    <style>
+        body {
+            background-color: #e39610;
+        }
+        li {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Parking Allotment</h1>
+    <ul>
+        <% data.forEach(item => { %>
+            <li>Slot: <%= item.parking_slot %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vehicle: <%= item.vehicle_no %>%></li> 
+        <% }); %>
+    </ul>
+    <form id="go_back" action="/back" method="POST">
+    <button type="submit" class="token-button3 button">Token Page</button>
+    </form>
+</body>
+</html>

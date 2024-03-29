@@ -6,7 +6,10 @@ var mysql = require('mysql');
 const app = express();
 const PORT = process.env.PORT || 3000;//server is hosted on port 3000
 
-app.use(express.static(path.join(__dirname, 'app')));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(path.join(__dirname, 'views')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -87,7 +90,8 @@ function token(res){
                 console.log('token generated');
                 console.log(t_no);
                 console.log(s_no); 
-                //code to display token and slot goes here
+                const list = [{ label: 'Token Number', value: t_no }, { label: 'Slot', value: s_no }];
+                res.render('gen', { data: list });//code to display token and slot goes here
             }else if(l3===1){//vehicle already has a token
                 res.status(401).send('token already generated');
             }else{//user is not registered
@@ -137,7 +141,84 @@ function token(res){
             res.status(500).send('cannot exit: token not generated');
         }
     });
+
+    app.post('/register', (req, res) => {
+        reg(res);
+    });
+
+    app.post('/allotment', (req, res) => {
+        con.query('SELECT * FROM token where reg_id is not null', (error, results) => {
+            if (error) throw error;
+            // Render data on a webpage
+            res.render('parking', { data: results });
+          });
+    });
+
+    app.post('/back', (req, res) => {
+        res.redirect('token.html');
+    });
+
 };
+
+
+function reg(res){
+    res.redirect('reg.html');
+    app.post('/regform', async(req, res) => {
+        const {f_name,email, reg_no ,veh_no,phone,l_name} = req.body;
+        console.log([f_name],[l_name],[phone],[email],[veh_no], [reg_no]);
+        try{
+            const row1 = await get_sub_reg_row(reg_no,veh_no);
+            var type = '';
+            const l1 = row1.length;
+            const Reg = parseInt(reg_no);
+            const t = Math.floor(Reg/1000);
+            console.log([row1],[Reg],[t]);
+            if(t == 9){
+                type = 'Staff';
+            }else if(t == 1){
+                type = 'Student';
+            }else if(Reg == 0){
+                type = 'Guest';
+            }else{
+                res.status(500).send('Invalid Data');
+            }
+            console.log([f_name],[l_name],[phone],[email],[veh_no], [reg_no],[type]);
+            if(l1==1){
+                res.status(401).send('already registered');
+            }else if(type != ''){
+                con.query('INSERT INTO Registration VALUES(?,?, ?, ?, ?, ?, ?)'
+                ,[ reg_no ,f_name,l_name,email,phone,type,veh_no], (err, rows4) => {
+                    if (err) {
+                        console.error('Error executing query:', err);
+                        return;
+                    }
+                    console.log("row inserted");
+                }); 
+            }
+
+            res.redirect('token.html');
+        }catch (err) {
+            console.error('Error executing query:', err);
+            res.status(500).send('Internal Server Error');
+        }
+    });
+
+}
+
+
+async function get_sub_reg_row(reg_id, vehicle_no) {//returns row from registration table if the vehicle is registered
+    return new Promise((resolve, reject) => {
+        con.query('select * from registration as T where T.reg_id = ? and T.vehicle_no = ? and exists(select * from registration as S where S.vehicle_no = T.vehicle_no)'
+        , [reg_id, vehicle_no], (err, rows) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);
+            }
+        });
+    });
+}
+
 
 async function get_reg_row(reg_id, vehicle_no) {//returns row from registration table if the vehicle is registered
     return new Promise((resolve, reject) => {
@@ -186,6 +267,7 @@ async function guest_check(exit_id, exit_veh) {//return entry type of the user(u
         });
     });
 }
+
 
 // Start the server
 app.listen(PORT, () => {
