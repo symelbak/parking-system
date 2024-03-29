@@ -23,12 +23,12 @@ This project aims to significantly improve the efficiency and convenience of the
 ## Design and Implementation
 ### System Design
 #### User Interface (UI) Design:
-![alt text](app/images/index.png)
-![alt text](app/images/token.png)
-![alt text](app/images/reg.png)
+![alt text](views/images/index.png)
+![alt text](views/images/token.png)
+![alt text](views/images/reg.png)
 #### Database Design:
 ER Model
-![alt text](app/images/ER_model.png)
+![alt text](views/images/ER_model.png)
 * Admin Table(**admin_id** , password)
 * Registration Table(**reg_id** , first_name , last_name , email , phone_no , entry_type , **vehicle_no**)
 * Token Table(**token_id** , parking_slot , ***reg_id*** , ***vehicle_no*** , entry_time)
