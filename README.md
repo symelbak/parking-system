@@ -16,7 +16,7 @@ Efficient and user-friendly parking systems are essential for maintaining a smoo
 
 The existing parking system at Manipal Institute of Technology (MIT) Bengaluru is plagued by inefficiency and user inconvenience. This project seeks to address these shortcomings by proposing a novel parking management system built upon a robust technological foundation.
 
-The proposed system leverages a backend architecture combining MySQL for database management, Java for core functionality, and Spring Boot for a streamlined development experience. The user interface will be built using HTML, CSS, and JavaScript, ensuring a user-friendly and accessible experience.
+The proposed system leverages a backend architecture combining MySQL for database management, Node.js for core functionality and for a streamlined development experience. The user interface will be built using HTML, CSS, and JavaScript, ensuring a user-friendly and accessible experience.
 
 This project aims to significantly improve the efficiency and convenience of the MIT Bengaluru parking system, providing a positive impact on both students and staff.
 
