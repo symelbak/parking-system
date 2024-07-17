@@ -59,10 +59,3 @@ Implementing algorithms for dynamic parking space allocation based on availabili
 Validating user tokens during the parking exit process.
 Executing procedures to release parking spaces and update the database.
 Handling optional deletion of guest user entries.
-
-
-## Result and Analysis
-
-## Conclusion
-
-
