@@ -9,8 +9,6 @@ Efficient and user-friendly parking systems are essential for maintaining a smoo
 + [Table of Contents](#table-of-contents)
 + [Introduction](#introduction)
 + [Design and Implementation](#design-and-implementation)
-+ [Result and Analysis](#result-and-analysis)
-+ [Conclusion](#conclusion)
 
 ## Introduction
 
